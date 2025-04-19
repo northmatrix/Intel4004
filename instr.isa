@@ -14,18 +14,24 @@ bp base pointer
 
 Instructions
 
-mov dx, ax      reg -> Reg
-mov dx, 0xF     reg -> Mem 
-
-mov 0x01, ax    imm -> Reg 
-mov 0x01, [di]  imm -> Mem
-
+mov dx, ax      reg -> reg
 mov si, [di]    reg -> mem
+
+mov 0x01, ax    imm -> reg 
+mov 0x01, [di]  imm -> mem
+
 mov [si] di     mem -> reg
 
 
-Now xor,and,or, operate the exact same ways
+Now xor,and,or, operate the exact same ways 
 
-xor, 0x01, ax     imm -> reg 
-xor, 0x01, [ax]   imm -> mem
-xor, 
+xor si, di       reg -> reg 
+xor si, [di]     reg -> mem
+
+xor 0x01, ax     imm -> reg 
+xor 0x01, [ax]   imm -> mem
+
+xor [si], di     mem -> reg 
+
+Not just takes a single value a (mem or a reg)
+
