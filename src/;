@@ -21,13 +21,13 @@ impl Cpu {
         }
     }
     fn log(&mut self) {
-        println!("ACC: {}", self.acc);
+        println!("ACC: {:04b}", self.acc);
         for x in 0..16 {
             println!("R{x}: {}", self.regs[x]);
         }
-        println!("SP: {}", self.sp);
         println!("PC: {}", self.pc);
-        println!("FLAGS: {}", self.flags);
+        println!("SP: {}", self.sp);
+        println!("FLAGS: {:08b}", self.flags);
     }
     fn step(&mut self) {
         let instr = self.rom[self.pc as usize];
